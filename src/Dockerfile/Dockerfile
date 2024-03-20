@@ -1,6 +1,4 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-ENV http_proxy=http://proxy.fpts.com.vn:8080
-ENV https_proxy=http://proxy.fpts.com.vn:8080
 WORKDIR /src
 COPY ["src/SM-Post/Post.Cmd/Post.Cmd.Api/Post.Cmd.Api.csproj", "src/SM-Post/Post.Cmd/Post.Cmd.Api/Post.Cmd.Api.csproj"]
 COPY ["src/CQRS-ES/CQRS.Core/CQRS.Core.csproj", "src/CQRS-ES/CQRS.Core/CQRS.Core.csproj"]
