@@ -1,0 +1,20 @@
+pipeline {
+   agent any
+   stages {
+    stage('git clone') {
+      steps {
+        git branch: 'cicd', credentialsId: 'git_credentials', url: 'https://github.com/kienntp45/Research.git'
+    }}
+     stage('docker build + push image') {
+      steps {
+        script {
+            sh 'docker build -t webapiv1 -f src/Dockerfiles/Dockerfile_WebApiv1 .'
+        }
+    }
+    steps {
+        script {
+            
+        }
+    }
+    }
+}}
