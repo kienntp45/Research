@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 ENV http_proxy=http://proxy.fpts.com.vn:8080
 ENV https_proxy=http://proxy.fpts.com.vn:8080
-WORKDIR /src
+WORKDIR /src/src
 COPY "Web.Api.v1/Web.Api.v1.csproj" "Web.Api.v1/Web.Api.v1.csproj"
 RUN dotnet restore -s https://api.nuget.org/v3/index.json -r linux-x64 "Web.Api.v1/Web.Api.v1.csproj"
 COPY . .
