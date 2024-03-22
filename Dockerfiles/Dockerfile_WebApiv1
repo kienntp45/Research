@@ -5,7 +5,7 @@ WORKDIR /src
 COPY "Web.Api.v1/Web.Api.v1.csproj" "Web.Api.v1/Web.Api.v1.csproj"
 COPY . .
 WORKDIR /src/Web.Api.v1
-RUN dotnet publish -r linux-x64 --self-contained false "Web.Api.v1.csproj"  -c release -o /app
+RUN dotnet publish -r linux-x64 --self-contained false -c release -o /app
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 ENV TZ=Asia/Ho_Chi_Minh
 USER root
