@@ -30,5 +30,19 @@ namespace Web.Api.v1.Controllers
             })
             .ToArray();
         }
+
+
+        [HttpGet(Name = "GetWeatherForecastv1")]
+        public IEnumerable<WeatherForecast> Getv1()
+        {
+            _logger.LogInformation("sdsaddssds");
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = Random.Shared.Next(-20, 55),
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            })
+            .ToArray();
+        }
     }
 }
