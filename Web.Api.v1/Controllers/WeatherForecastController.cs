@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Web.Api.v1.Controllers
 {
     [ApiController]
-    [Route("[controller]/v1")]
+    [Route("Weather/v1")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -18,10 +18,9 @@ namespace Web.Api.v1.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet("GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-            _logger.LogInformation("sdsaddssds");
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
@@ -32,10 +31,9 @@ namespace Web.Api.v1.Controllers
         }
 
 
-        [HttpGet(Name = "GetWeatherForecastv1")]
+        [HttpGet( "test-api")]
         public IEnumerable<WeatherForecast> Getv1()
         {
-            _logger.LogInformation("sdsaddssds");
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
